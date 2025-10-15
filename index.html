@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/basecoat.cdn.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.2/dist/js/all.min.js" defer></script>
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<body onload="Bar('shown')">
+  <div class="parent background">
+    <div id="bar">
+      <svg onclick="document.getElementById('demo-dialog-edit-profile').showModal();" class="menu"
+        xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-settings-icon lucide-settings">
+        <path
+          d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+      <input id="inputtext" class="input" type="text" placeholder="Message" autofocus>
+    </div>
+    <div onclick="Bar('shown')" class="text-area background">
+      <h1 class="text textcolor"></h1>
+    </div>
+  </div>
+  <dialog id="demo-dialog-edit-profile" class="dialog w-full" aria-labelledby="demo-dialog-edit-profile-title"
+    aria-describedby="demo-dialog-edit-profile-description" onclick="if (event.target === this) this.close()">
+    <div class="header">
+    </div>
+
+    <article>
+      <header class="dialog-article-header">
+        <button class="btn-secondary" onclick="this.closest('dialog').close()">Done</button>
+        <h2>Settings</h2>
+        <button class="btn-secondary" onclick="resetSettings()">Reset</button>
+      </header>
+      <div class="preview background">
+        <h1 class="preview-text textcolor" id="previewText">Big</h1>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-label">Font</div>
+        <div class="setting-value">
+          <span class="font"></span>
+          <span class="chevron">›</span>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-label">Text Color</div>
+        <div class="setting-value">
+          <input type="color" id="textColorPicker" style="visibility : hidden;">
+          <div class="color-indicator" id="textColorIndicator" onclick="document.getElementById('textColorPicker').click()"></div>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-label">Background Color</div>
+        <div class="setting-value">
+          <input type="color" id="bgColorPicker" style="visibility : hidden;">
+          <div class="color-indicator background" id="bgColorIndicator" onclick="document.getElementById('bgColorPicker').click()"></div>
+        </div>
+      </div>
+
+      <div class="swap-colors">
+        <button class="btn-ghost" onclick="swapColors()">Swap Colors</button>
+      </div>
+
+      <div class="flash-row">
+        <div class="setting-label">Flash</div>
+        <input type="checkbox" id="flashToggle">
+      </div>
+
+      <div class="speed-selector">
+        <button class="btn-secondary speed-option" data-speed="slowest">Slowest</button>
+        <button class="btn-secondary speed-option" data-speed="slow">Slow</button>
+        <button class="btn-secondary speed-option active" data-speed="medium">Medium</button>
+        <button class="btn-secondary speed-option" data-speed="fast">Fast</button>
+        <button class="btn-secondary speed-option" data-speed="fastest">Fastest</button>
+      </div>
+    </article>
+  </dialog>
+</body>
+<script src="js/script.js"></script>
+</html>
