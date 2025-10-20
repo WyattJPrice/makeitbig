@@ -42,11 +42,43 @@
         <h1 class="preview-text textcolor" id="previewText">Big</h1>
       </div>
 
-      <div class="setting-row">
-        <div class="setting-label">Font</div>
-        <div class="setting-value">
-          <span class="font"></span>
-          <span class="chevron">›</span>
+      <div class="dropdown-wrapper">
+        <button class="dropdown-button" id="dropdown-button">
+          <span id="selected-font-display">Inter</span>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div class="font-dropdown" id="font-dropdown">
+          <div class="tabs">
+            <button class="tab active" data-tab="google">Google Fonts</button>
+            <button class="tab" data-tab="custom">Custom Fonts</button>
+          </div>
+
+          <div class="tab-content active" id="google-tab">
+            <div class="search-box">
+              <input type="text" class="search-input" id="search-input" placeholder="Search fonts...">
+            </div>
+            <div class="font-list" id="google-font-list"></div>
+          </div>
+
+          <div class="tab-content" id="custom-tab">
+            <div class="upload-section">
+              <button class="upload-button" id="upload-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                Upload Font File
+              </button>
+              <input type="file" id="file-input" accept=".ttf,.otf,.woff,.woff2" multiple>
+              <p class="upload-info">Supports TTF, OTF, WOFF, WOFF2</p>
+            </div>
+            <div class="font-list" id="custom-font-list">
+              <div class="empty-state">No custom fonts uploaded yet</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -54,7 +86,8 @@
         <div class="setting-label">Text Color</div>
         <div class="setting-value">
           <input type="color" id="textColorPicker" style="visibility : hidden;">
-          <div class="color-indicator" id="textColorIndicator" onclick="document.getElementById('textColorPicker').click()"></div>
+          <div class="color-indicator" id="textColorIndicator"
+            onclick="document.getElementById('textColorPicker').click()"></div>
         </div>
       </div>
 
@@ -62,7 +95,8 @@
         <div class="setting-label">Background Color</div>
         <div class="setting-value">
           <input type="color" id="bgColorPicker" style="visibility : hidden;">
-          <div class="color-indicator background" id="bgColorIndicator" onclick="document.getElementById('bgColorPicker').click()"></div>
+          <div class="color-indicator background" id="bgColorIndicator"
+            onclick="document.getElementById('bgColorPicker').click()"></div>
         </div>
       </div>
 
@@ -86,4 +120,5 @@
   </dialog>
 </body>
 <script src="js/script.js"></script>
+
 </html>
